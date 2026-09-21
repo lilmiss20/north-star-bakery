@@ -5,7 +5,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Products | North Star Bakery</title>
-<link href="styles.css" rel="stylesheet"/></head>
+<link href="styles.css" rel="stylesheet"/><script defer="True" src="script.js"></script></head>
 <body class="bakery-site">
 <a href="#main-content">Skip to main content</a>
 <header class="site-header">
@@ -24,8 +24,16 @@
 <main class="site-main inner-page products-page" id="main-content">
 <div class="page-intro"><h1>Our Breads, Pastries, and Cakes</h1><p>Choose an everyday favorite or ask us about something special for your next gathering.
       Prices below are illustrative starting ranges, not a live checkout.</p></div>
-
-<div class="section-grid"><section aria-labelledby="breads">
+<section aria-labelledby="favorites-title" class="favorites-panel">
+<div class="favorites-intro"><div><p class="eyebrow">Plan your next bakery visit</p><h2 id="favorites-title">Build your bakery favorites</h2>
+<p>Choose a few treats to remember. Your picks stay on this browser when you refresh, and you can bring the list to the preorder form.</p></div>
+<p aria-live="polite" class="favorite-counter" id="favorite-count">0 favorites saved</p></div>
+<div class="favorite-options" id="favorite-options"><p>Loading bakery favorites…</p></div>
+<div aria-labelledby="saved-title" class="saved-favorites"><h3 id="saved-title">Your saved favorites</h3>
+<p aria-live="polite" class="favorite-feedback" id="favorite-feedback" role="status">Pick a treat to start your list.</p>
+<ul aria-label="Saved bakery favorites" id="favorites-list"></ul>
+<a class="button-link" href="contact.html">Use favorites in the contact form →</a></div>
+</section><div class="section-grid"><section aria-labelledby="breads">
 <h2 id="breads">Breads</h2>
 <img alt="Rustic round and seeded loaves arranged in a bakery display case" decoding="async" loading="lazy" src="media/bakery-bread.png" width="600"/>
 <ul>
@@ -48,8 +56,6 @@
         before placing a preorder.</p>
 <p><a href="contact.html">Request a preorder or ask about ingredients</a>.</p>
 </section></div>
-
-
 </main>
 <footer class="site-footer">
 <p>North Star Bakery — baked with care for our neighbors.</p>

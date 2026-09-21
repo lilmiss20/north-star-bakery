@@ -5,7 +5,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Contact and Preorder | North Star Bakery</title>
-<link href="styles.css" rel="stylesheet"/></head>
+<link href="styles.css" rel="stylesheet"/><script defer="True" src="script.js"></script></head>
 <body class="bakery-site">
 <a href="#main-content">Skip to main content</a>
 <header class="site-header">
@@ -25,7 +25,6 @@
 <div class="page-intro"><h1>Contact Us and Request a Preorder</h1><p>Planning an event or saving a loaf for pickup? Tell us what you have in mind.
       This student-project form demonstrates HTML validation; it does not transmit
       requests to a live bakery.</p></div>
-
 <div class="section-grid"><section aria-labelledby="visit-details">
 <h2 id="visit-details">Location and Hours</h2>
 <address>Sample location: 100 Main Street, Your Town, ST 00000</address>
@@ -33,28 +32,33 @@
         Sunday closed. Confirm details before a real visit.</p>
 </section><section aria-labelledby="request-heading">
 <h2 id="request-heading">Preorder and Inquiry Form</h2>
-<form action="#" aria-label="Demonstration preorder and inquiry form" method="get">
+<form action="#" aria-label="Demonstration preorder and inquiry form" id="bakery-request-form" method="get" novalidate="novalidate"><div aria-labelledby="saved-request-title" class="saved-request">
+<h3 id="saved-request-title">Bring your saved favorites</h3>
+<p aria-live="polite" id="saved-request-items">Your saved bakery favorites will appear here.</p>
+<button class="secondary-button" id="use-favorites" type="button">Add saved favorites to item details</button>
+<p class="form-hint">Your favorites are remembered in this browser only. This is a demo form; it does not send an order.</p>
+</div>
 <fieldset>
 <legend>Your Contact Information</legend>
 <p>
 <label for="customer-name">Name (required)</label><br/>
-<input autocomplete="name" id="customer-name" minlength="2" name="customer_name" required="" type="text"/>
+<input aria-describedby="customer-name-error" autocomplete="name" id="customer-name" minlength="2" name="customer_name" required="" type="text"/><span aria-live="polite" class="field-error" id="customer-name-error"></span>
 </p>
 <p>
 <label for="customer-email">Email (required)</label><br/>
-<input autocomplete="email" id="customer-email" name="customer_email" required="" type="email"/>
+<input aria-describedby="customer-email-error" autocomplete="email" id="customer-email" name="customer_email" required="" type="email"/><span aria-live="polite" class="field-error" id="customer-email-error"></span>
 </p>
 </fieldset>
 <fieldset>
 <legend>Your Request</legend>
 <p>
 <label for="request-type">Request type (required)</label><br/>
-<select id="request-type" name="request_type" required="">
+<select aria-describedby="request-type-error" id="request-type" name="request_type" required="">
 <option value="">Choose one</option>
 <option value="preorder">Preorder request</option>
 <option value="general">General question</option>
 <option value="event">Event or cake inquiry</option>
-</select>
+</select><span aria-live="polite" class="field-error" id="request-type-error"></span>
 </p>
 <p>
 <label for="pickup-date">Preferred pickup date</label><br/>
@@ -62,7 +66,7 @@
 </p>
 <p>
 <label for="item-details">Item details or question (required)</label><br/>
-<textarea id="item-details" minlength="10" name="item_details" required="" rows="5"></textarea>
+<textarea aria-describedby="item-details-error" id="item-details" minlength="10" name="item_details" required="" rows="5"></textarea><span aria-live="polite" class="field-error" id="item-details-error"></span>
 </p>
 <p>
 <label for="allergy-notes">Allergy notes (if applicable)</label><br/>
@@ -70,11 +74,10 @@
 </p>
 </fieldset>
 <p><button type="submit">Review demo request</button></p>
-</form>
+<p aria-live="polite" class="form-summary" hidden="" id="form-summary" role="status"></p></form>
 <p>For a real preorder, the bakery would need to confirm availability,
         ingredients, pricing, and a pickup time directly.</p>
 </section></div>
-
 </main>
 <footer class="site-footer">
 <p>North Star Bakery — baked with care for our neighbors.</p>
